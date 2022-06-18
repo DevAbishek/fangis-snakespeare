@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.game-container {
   min-height: 100vh;
+  background-color: #fff;
+
+}
+
+.game-details {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #C2F970;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* .game-title {
+
+} */
+
+.game-area {
+  position: relative;
+  margin: calc(calc( 100vh - 600px - 115px )/2) auto;
+  width: 600px;
+  height: 600px;
+  border: 2px solid #000;
+  background-color: #C2F970;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.snake-dot {
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: #230C0F;
+  border: 1px solid #fff;
+  z-index: 2;
 }
+
+.snake-food {
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: #f93943;
+  border: 1px solid #fff;
+  z-index: 1;
+}
+
