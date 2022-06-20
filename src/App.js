@@ -65,17 +65,6 @@ class App extends Component {
 
   }
 
-  // highScore = () => {
-  //   let highscore = localStorage.getItem("highscore");
-  //   let highScoreVal = 0;
-  //   if(highscore === null){
-  //     localStorage.setItem("highscore", JSON.stringify(highScoreVal))
-  //   }
-  //   else {
-  //     console.log("hi: ", highScoreVal)
-  //   }
-  // }
-
   onKeyDown = (e) => {
     this.state.musicSound.play()
     e = e || window.event;
@@ -91,6 +80,8 @@ class App extends Component {
         break;
       case 39:
         this.setState({ direction: 'RIGHT' });
+        break;
+      default:
         break;
     }
   }
@@ -113,6 +104,8 @@ class App extends Component {
       case 'UP':
         head = [head[0], head[1] - 2];
         break;
+      default:
+        break;
     }
     dots.push(head);
     dots.shift();
@@ -133,7 +126,7 @@ class App extends Component {
     let head = snake[snake.length - 1];
     snake.pop();
     snake.forEach(dot => {
-      if (head[0] == dot[0] && head[1] == dot[1]) {
+      if (head[0] === dot[0] && head[1] === dot[1]) {
         this.onGameOver();
       }
     })
@@ -142,7 +135,7 @@ class App extends Component {
   checkIfEat() {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
     let food = this.state.food;
-    if (head[0] == food[0] && head[1] == food[1]) {
+    if (head[0] === food[0] && head[1] === food[1]) {
       this.state.foodSound.play();
       this.setState({
         food: getRandomCoordinates(),
